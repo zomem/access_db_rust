@@ -7,7 +7,9 @@ description = "数据库连接"
 license = "MIT"
 readme = "README.md"
 include = ["/src"]
-
+repository = "https://github.com/zomem/access_db_rust"
+keywords = ["mysql", "sql"]
+categories = ["database"]
 
 [dependencies]
 mysql = "22.2"

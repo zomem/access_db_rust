@@ -1,3 +1,3 @@
 
 mod access_mysql;
-use access_mysql::AccessMysql;
+pub use access_mysql::AccessMysql;
