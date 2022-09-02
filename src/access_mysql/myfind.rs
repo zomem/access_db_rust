@@ -37,6 +37,21 @@
 /// order_by: 排序
 /// select: 字段选择
 /// 
+/// 
+/// // 记得要加上 Serialize, Deserialize
+/// #[derive(Serialize, Deserialize)]
+/// struct Feedback {
+///     id: u64,
+///     uid: u64,
+///     content: String,
+///     created_at: String,
+/// }
+/// let data: (Vec<Feedback>, Option<(u64,u64,String,String)>) = myconn
+///     .run(myfind!("feedback", {
+///         p0: ["uid", ">", 0],
+///         r: "p0",
+///         select: "id,uid,content,created_at",
+///     }));
 /// ```
 #[macro_export]
 macro_rules! myfind {

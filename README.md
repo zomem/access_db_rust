@@ -3,6 +3,15 @@
 ### 数据库连接
   
 [node 版本](https://www.npmjs.com/package/access-db)  
+
+
+依赖：
+```toml
+mysql = "22.2"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = { version = "1.0", default-features = false, features = ["alloc"] }
+regex = "1.6"
+```
   
 目前仅支持 mysql
 
