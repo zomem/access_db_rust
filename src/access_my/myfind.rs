@@ -30,7 +30,7 @@
 /// 
 /// "feedback" 为主表，可以 as 重命名。
 /// j*: 为 join 操作，["字段", "方法", "字段2"]， 主表"字段"，可以只写字段名
-/// p*: 为查寻操作，["字段", "方法", "字段2"],  主表"字段"，可以只写字段名
+/// p*: 为查寻操作，["字段", "方法", "参数"],  主表"字段"，可以只写字段名
 /// r: 为p的组合规则
 /// page: 第几页
 /// limit: 每页数量
@@ -46,7 +46,7 @@
 ///     content: String,
 ///     created_at: String,
 /// }
-/// let data: (Vec<Feedback>, Option<(u64,u64,String,String)>) = myconn
+/// let data: (Vec<Feedback>, Option<(u64,u64,String,String)>) = myfind
 ///     .run(myfind!("feedback", {
 ///         p0: ["uid", ">", 0],
 ///         r: "p0",
