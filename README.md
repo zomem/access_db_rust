@@ -20,11 +20,11 @@ regex = "1.6"
 my_run、my_run_id  
 ```rust
 use access_db::{AccessMy, my_run, myfind ...};
-pub fn my_connect() -> PooledConn {
+pub fn mysql_conn() -> PooledConn {
     let conn = AccessMy::new(1, 10, "mysql://root:12345678@localhost:3306/dev_db").pool.get_conn().unwrap();
     conn
 }
-let mut conn = my_connect();
+let mut conn = mysql_conn();
 
 // 新增一条数据
 let id = my_run_id(&mut conn, myset!("feedback", {
