@@ -24,19 +24,19 @@ pub fn my_connect() -> PooledConn {
     let conn = AccessMy::new(1, 10, "mysql://root:12345678@localhost:3306/dev_db").pool.get_conn().unwrap();
     conn
 }
-let mut my_conn = my_connect();
+let mut conn = my_connect();
 
 // 新增一条数据
-let id = my_run_id(&mut my_conn, myset!("feedback", {
+let id = my_run_id(&mut conn, myset!("feedback", {
     "content": "ADFaadf",
     "uid": 9,
 }));
 
 // 删除一条数据
-my_run_id(&mut my_conn, mydel!("feedback", 50));
+my_run_id(&mut conn, mydel!("feedback", 50));
 
 // 更新一条数据
-my_run_id(&mut my_conn, myupdate!("feedback", 56, {
+my_run_id(&mut conn, myupdate!("feedback", 56, {
     "content": "更新后的内容，一一一一"
 }));
 
@@ -47,7 +47,7 @@ struct Feedback {
     id: u64,
     cc: String
 }
-let res_get: (Vec<Feedback>, Option<(u64, String)>) = my_run(&mut my_conn, sql1);
+let res_get: (Vec<Feedback>, Option<(u64, String)>) = my_run(&mut conn, sql1);
 
 // 查寻数据
 let sql_f = myfind!("feedback", {
@@ -57,10 +57,10 @@ let sql_f = myfind!("feedback", {
     limit: 5,
     select: "id, content as cc",
 });
-let res_find: (Vec<Feedback>, Option<(u64, String)>) = my_run(&mut my_conn, sql_f);
+let res_find: (Vec<Feedback>, Option<(u64, String)>) = my_run(&mut conn, sql_f);
 
 // 获取计数
-let res_count: (Vec<u64>, Option<u64>) = my_run(&mut my_conn, mycount!("feedback", {}));
+let res_count: (Vec<u64>, Option<u64>) = my_run(&mut conn, mycount!("feedback", {}));
 
 // 批量 新增数据
 let msql = mysetmany!("feedback", [

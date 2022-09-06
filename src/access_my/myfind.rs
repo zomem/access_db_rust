@@ -225,71 +225,81 @@ macro_rules! myfind {
             let mut hash_p: std::collections::HashMap<String, String> = std::collections::HashMap::new();
             {
                 $(
+                    let tm = $v0.clone();
                     let vt = _type_of($v0);
-                    let t = $v0.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p0".to_string(), _get_p($k0, $m0, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v1.clone();
                     let vt = _type_of($v1);
-                    let t = $v1.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p1".to_string(), _get_p($k1, $m1, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v2.clone();
                     let vt = _type_of($v2);
-                    let t = $v2.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p2".to_string(), _get_p($k2, $m2, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v3.clone();
                     let vt = _type_of($v3);
-                    let t = $v3.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p3".to_string(), _get_p($k3, $m3, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v4.clone();
                     let vt = _type_of($v4);
-                    let t = $v4.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p4".to_string(), _get_p($k4, $m4, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v5.clone();
                     let vt = _type_of($v5);
-                    let t = $v5.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p5".to_string(), _get_p($k5, $m5, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v6.clone();
                     let vt = _type_of($v6);
-                    let t = $v6.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p6".to_string(), _get_p($k6, $m6, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v7.clone();
                     let vt = _type_of($v7);
-                    let t = $v7.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p7".to_string(), _get_p($k7, $m7, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v8.clone();
                     let vt = _type_of($v8);
-                    let t = $v8.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p8".to_string(), _get_p($k8, $m8, t.as_str(), vt, _table_change));
                 )?
             }
             {
                 $(
+                    let tm = $v9.clone();
                     let vt = _type_of($v9);
-                    let t = $v9.to_string();
+                    let t = tm.to_string();
                     hash_p.insert("p9".to_string(), _get_p($k9, $m9, t.as_str(), vt, _table_change));
                 )?
             }
